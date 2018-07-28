@@ -163,7 +163,10 @@ android {
 
     defaultConfig {
         versionCode cdvVersionCode ?: Integer.parseInt("" + privateHelpers.extractIntFromManifest("versionCode") + "0")
+	versionName privateHelpers.extractStringFromManifest("versionName")
         applicationId privateHelpers.extractStringFromManifest("package")
+
+	setProperty("archivesBaseName", "montclair-" + versionName + "-" + versionCode)
 
         if (cdvMinSdkVersion != null) {
             minSdkVersion cdvMinSdkVersion
