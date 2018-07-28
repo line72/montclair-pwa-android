@@ -163,7 +163,7 @@ android {
     }
 
     defaultConfig {
-        versionCode cdvVersionCode ?: Integer.parseInt("" + privateHelpers.extractIntFromManifest("versionCode") + "0")
+        versionCode cdvVersionCode ?: Integer.parseInt("" + privateHelpers.extractIntFromManifest("versionCode"))
 	versionName privateHelpers.extractStringFromManifest("versionName")
         applicationId privateHelpers.extractStringFromManifest("package")
 
