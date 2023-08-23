@@ -15,8 +15,8 @@ jobs:
 
       - name: Create ENV
         run: |
-          echo "::set-env name=REPO::$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2-)"
-          echo "::set-env name=VER::$(echo $GITHUB_REF | cut -d '/' -f 3-)"
+          echo "REPO=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2-)" >> "$GITHUB_ENV"
+          echo "VER=$(echo $GITHUB_REF | cut -d '/' -f 3-)" >> "$GITHUB_ENV"
         
       - name: Build
         run: |
@@ -30,8 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.VER }}
-          release_name: Release ${{ env.VER }}
+          tag_name: ${{ VER }}
+          release_name: Release ${{ VER }}
           draft: false
           prerelease: false
           
@@ -41,6 +41,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./platforms/android/build/outputs/apk/montclair-${{ env.VER }}-release-unsigned.apk
-          asset_name: ${{ env.REPO }}-${{ env.VER }}-release-unsigned.apk
+          asset_path: ./platforms/android/build/outputs/apk/montclair-${{ VER }}-release-unsigned.apk
+          asset_name: ${{ REPO }}-${{ VER }}-release-unsigned.apk
           asset_content_type: application/java-archive
