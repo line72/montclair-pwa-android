@@ -6,10 +6,6 @@
   "config_munge": {
     "files": {}
   },
-  "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "net.line72.montclair"
-    }
-  },
+  "installed_plugins": {},
   "dependent_plugins": {}
 }
