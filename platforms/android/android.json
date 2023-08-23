@@ -12,13 +12,7 @@
               "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             }
-          ],
-          "/*/feature[@name='NetworkStatus']": []
-        }
-      },
-      "AndroidManifest.xml": {
-        "parents": {
-          "/*": []
+          ]
         }
       }
     }
