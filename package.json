@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "cordova": "node_modules/cordova/bin/cordova"
+  },
+  "dependencies": {
+    "cordova": "^12.0.0"
+  }
+}
