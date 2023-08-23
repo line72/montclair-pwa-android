@@ -25,7 +25,7 @@ jobs:
           
       - name: Build
         run: |
-          npm run cordova build --release --device
+          npm run cordova build -- --release --device
 
       - name: Create Release
         id: create_release
